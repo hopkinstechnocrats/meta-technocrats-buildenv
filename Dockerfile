@@ -7,7 +7,8 @@ RUN apt-get update \
 COPY build/* build/
 COPY config.mcf config.mcf
 
-RUN mkdir /artifacts \
+RUN mkdir /artifacts \ 
+    && mkdir conf \
     && ln -snf ../conf build/.
 
 RUN build/mcf -f config.mcf
